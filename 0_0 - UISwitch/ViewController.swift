@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         return;
     }
 
-    func addSwitch(_ view:UIView) {
+    @objc func addSwitch(_ view:UIView) {
         
         let uiSwitch:UISwitch = UISwitch();
         
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
 
     
     /* note - switch.on represents the current state. and the toggle 'action' is called AFTER the toggle, so it's the POST state here...*/
-    func toggle (_ uiSwitch:UISwitch) {
+    @objc func toggle (_ uiSwitch:UISwitch) {
         
         if(uiSwitch.isOn) {
             print("toggling on");
