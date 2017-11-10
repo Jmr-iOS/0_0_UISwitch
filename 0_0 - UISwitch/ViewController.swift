@@ -23,13 +23,13 @@ class ViewController: UIViewController {
         return;
     }
 
-    func addSwitch(view:UIView) {
+    func addSwitch(_ view:UIView) {
         
         let uiSwitch:UISwitch = UISwitch();
         
-        uiSwitch.frame.origin = CGPointMake(50, 200);                   //Set the XY Location
+        uiSwitch.frame.origin = CGPoint(x: 50, y: 200);                   //Set the XY Location
         
-        uiSwitch.addTarget(self, action: "toggle:", forControlEvents: UIControlEvents.ValueChanged);
+        uiSwitch.addTarget(self, action: #selector(ViewController.toggle(_:)), for: UIControlEvents.valueChanged);
         
         view.addSubview(uiSwitch);
         
@@ -38,9 +38,9 @@ class ViewController: UIViewController {
 
     
     /* note - switch.on represents the current state. and the toggle 'action' is called AFTER the toggle, so it's the POST state here...*/
-    func toggle (uiSwitch:UISwitch) {
+    func toggle (_ uiSwitch:UISwitch) {
         
-        if(uiSwitch.on) {
+        if(uiSwitch.isOn) {
             print("toggling on");
         } else {
             print("toggling off");
